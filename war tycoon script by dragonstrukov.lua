@@ -275,6 +275,12 @@ Section:NewButton("aimlock [keybind T]", "lol", function()
     end)
 end)
 
+local Section = Tab:NewSection("auto collection of all gifts")
+
+Section:NewButton("click", "lol", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/samuraa1/Samuraa1-Hub/refs/heads/main/War-Tycoon"))()
+end)
+
 local Tab = Window:NewTab("teleport")
 
 local Section = Tab:NewSection("teleport to the teams")
@@ -442,6 +448,23 @@ local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 
 -- Телепортируем персонажа
 humanoidRootPart.CFrame = CFrame.new(targetPosition)
+end)
+
+local Section = Tab:NewSection("Teleport to the subway")
+
+Section:NewButton("teleport", "lol", function()
+        -- Укажите целевые координаты
+        local targetPosition = Vector3.new(840.1897583007812, 8.918466567993164, -2908.224365234375) -- Замените на нужные координаты
+
+        -- Получаем игрока
+        local player = game.Players.LocalPlayer -- Используйте только в LocalScript
+        local character = player.Character or player.CharacterAdded:Wait()
+        
+        -- Убедимся, что у персонажа есть HumanoidRootPart
+        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+        
+        -- Телепортируем персонажа
+        humanoidRootPart.CFrame = CFrame.new(targetPosition)
 end)
 
 local Section = Tab:NewSection("teleport to the oli")
